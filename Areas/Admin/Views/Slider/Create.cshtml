@@ -1,0 +1,25 @@
+﻿@using Zay_Template.Areas.Admin.Models.Slider
+@model CreateSliderVM
+
+<form method="post" action="@Url.Action("Create", "Slider", new { area = "Admin" })">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" placeholder="Enter firstname" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+
+        <label asp-for="SecondName"></label>
+        <input asp-for="SecondName" class="form-control" placeholder="Enter secondname" />
+        <span asp-validation-for="SecondName" class="text-danger"></span>
+
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" placeholder="Enter description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+
+        <label asp-for="PhotoPath"></label>
+        <input asp-for="PhotoPath" class="form-control" placeholder="Enter photo path or URL" />
+        <span asp-validation-for="PhotoPath" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
